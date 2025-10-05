@@ -12,7 +12,7 @@ jobs:
         id: prime-cache
         uses: actions/cache@v4
         with:
-          path: ~/.cache/demo     # You can change this path to anything you want to cache
+          path: ~/.cache/demo
           key: cache-0f56cde
 
       - name: Echo cache result
