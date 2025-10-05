@@ -1,0 +1,19 @@
+name: Cache Prime Demo
+
+on: [push, workflow_dispatch]
+
+jobs:
+  cache-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: prime-cache-0f56cde
+        id: prime-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/demo     # You can change this path to anything you want to cache
+          key: cache-0f56cde
+
+      - name: Echo cache result
+        run: echo "Cache hit: ${{ steps.prime-cache.outputs.cache-hit }}"
